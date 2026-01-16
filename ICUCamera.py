@@ -3,7 +3,9 @@
 # ============================================================
 ver = "1.0.0"
 # This script supersedes PrintingTools.py
-# Written by Seowon Choi [schoi1@icecube.wisc.edu] / [choi940927@gmail.com]
+# Published @ 15DEC2025
+# Last Updated @ 15JAN2026
+# Originally written by Seowon Choi [schoi1@icecube.wisc.edu] / [choi940927@gmail.com]
 
 import os
 import glob

@@ -2,10 +2,10 @@
 # Version and Contact Info
 # ============================================================
 # version 1.0.0
-ver = "v1.0.2"
+ver = "v1.0.3"
 # Published @ 30DEC2025
-# Last Updated @ 03JAN2026
-# Written by Seowon Choi [schoi1@icecube.wisc.edu] 
+# Last Updated @ 15JAN2026
+# Originally written by Seowon Choi [schoi1@icecube.wisc.edu] / [choi940927@gmail.com]
 
 #fname = "/Users/seowonchoi/Documents/NAPPL/Operation/drts/ICUCamera4Pole/real_data/Camera-images_cam1/Run_IIB_string87_mDOM_port5306_cam1_illum1_gain0_exposure3700ms_20260102-05-33-39.raw"
 # ============================================================
