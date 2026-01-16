@@ -26,6 +26,7 @@ share/python-wheels/
 *.egg
 MANIFEST
 
+
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
@@ -206,6 +207,11 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# any local data should not be included here
+# any local data should not be included here. If you want to use your local directory to play around whit this module, create /data/ folder under this repo dir, and only keep it there.
 /data/
+
+# for Mac users
+./.DS_Store
+
+
 
