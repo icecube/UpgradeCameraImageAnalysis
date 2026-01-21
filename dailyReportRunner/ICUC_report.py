@@ -9,6 +9,7 @@ ver = "v1.0.3"
 
 #fname = "/Users/seowonchoi/Documents/NAPPL/Operation/drts/ICUCamera4Pole/real_data/Camera-images_cam1/Run_IIB_string87_mDOM_port5306_cam1_illum1_gain0_exposure3700ms_20260102-05-33-39.raw"
 # ============================================================
+import traceback
 import ICUCamera as icuc
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
@@ -265,4 +266,11 @@ for day in data:
     outputdir.mkdir(parents=True, exist_ok=True, mode=0o750)
     for file in file_list:
         fname = str(file)
-        make_report(fname, outputdir)
+        try:
+            make_report(fname, outputdir)
+    # Code that might raise an exception
+        except Exception as e:
+            with open("error_log.txt", "a") as log_file:
+                print(f"{file} failed with exception: {e}", file=log_file)
+                traceback.print_exc(file=log_file) # Prints the full traceback to the file
+            continue
