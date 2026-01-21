@@ -213,5 +213,7 @@ __marimo__/
 # for Mac users
 .DS_Store
 
-
+# Output and data
+processed/
+output/
 
