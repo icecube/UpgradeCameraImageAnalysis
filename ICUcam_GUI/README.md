@@ -9,7 +9,7 @@
 ## Overview
 The **IceCube Upgrade Image Analyzer** is a specialized GUI tool designed for analyzing raw sensor data from **IceCube Upgrade cameras**. 
 
-It serves as a bridge between raw scientific data and visual inspection, providing real-time debayering, scientific thresholding (12-bit), and channel-specific inspection (RGGB) for `.RAW` and `.tar.gz` datasets.
+It serves as a bridge between raw scientific data and visual inspection, providing real-time debayering, thresholding (8-bit), and channel-specific inspection (RGGB) for `.RAW` and `.tar.gz` datasets.
 
 
 
@@ -19,10 +19,10 @@ It serves as a bridge between raw scientific data and visual inspection, providi
 * **Variable window heights:** Automatically detects and loads raw files with variable window heights (e.g., 979px vs 993px) without crashing.
 * **Archive Support:** Drag & drop `.tar.gz` files directly; the tool extracts the correct raw image automatically.
 
-### 2. Scientific Inspection
+### 2. Fine tuning Different Parameters
 * **8-bit Thresholding:** The threshold slider operates on the full **0–255** sensor range. Pixels exceeding the threshold (e.g., saturation > 255) are highlighted in **Red**.
 * **Raw Channel View:** Isolate **Green 1** and **Green 2** raw pixels independently to identify row/column-specific sensor noise.
-* **Smart Gray:** Uses the `ICUCamera.py` algorithm to mathematically recover saturated pixels using Red/Green channel correlation.
+* **updated Gray:** Uses the `ICUCamera.py` algorithm to mathematically recover saturated pixels using Red/Green channel correlation.
 
 ### 3. Real-Time Dashboard
 * **Live Histogram:** Log-scale pixel intensity distribution.
