@@ -18,8 +18,8 @@ except ImportError:
 # ==================== INPUT DIRECTORY settings ====================
 root_dir = r"E:\ICUCamera_data" #all the different run directories are saved in a same directory like the input"E:\ICUCamera_data"
 ####################"E:\ICUCamera_data\0102";"E:\ICUCamera_data\0105";"E:\ICUCamera_data\0108"...etc.
-input_file = "Camera-Run_IIIB_string88_mDOM_port5244_cam2_illum2_gain0_exposure3700ms"
-output_gif = r"E:\ICUCamera_data\Gif_files_for_press_release\timelapse_Run_IIIB_string88_mDOM_port5244_cam2_illum2_gain0_exposure3700ms.gif"
+input_file = "Camera-Run_IIIB_string88_mDOM_port5244_cam2_illum2_gain0_exposure3700ms" #change it as your input file name
+output_gif = r"E:\ICUCamera_data\Gif_files_for_press_release\timelapse_Run_IIIB_string88_mDOM_port5244_cam2_illum2_gain0_exposure3700ms.gif" #change it as your output file name
 frame_duration = 500
 # =======================================================
 
