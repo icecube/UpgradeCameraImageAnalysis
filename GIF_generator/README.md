@@ -1,7 +1,7 @@
 # IceCube Upgrade Image GIF file generator(VISUAL PURPOSE ONLY)
 
-**Version:** v1.0  
-**Last Updated:** 01 Feb 2026  
+**Version:** v1.1  
+**Last Updated:** 03 Feb 2026  
 **Author:** Shouvik Mondal (smondal@icecube.wisc.edu)  
 **Based on:** Seowon Choi's scripts (schoi1@icecube.wisc.edu)
 
