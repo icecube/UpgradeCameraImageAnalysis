@@ -1,6 +1,6 @@
 # 📸 IceCube Upgrade Camera: Automated Timelapse Generator
 
-**Author:** Shouvik Mondal based on Seowon Choi's scripts
+**Author:** Shouvik Mondal(based on Seowon Choi's scripts)
 **Affiliation:** Department of Physics & Astronomy, University of Utah  
 **Experiment:** IceCube Neutrino Observatory (IceCube Upgrade)  
 **Version:** v1.0
