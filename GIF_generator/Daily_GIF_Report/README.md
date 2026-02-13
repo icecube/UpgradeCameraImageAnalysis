@@ -1,15 +1,15 @@
 # 📸 IceCube Upgrade Camera: Automated Timelapse Generator
 
-**Author:** Shouvik Mondal  
+**Author:** Shouvik Mondal based on Seowon Choi's scripts
 **Affiliation:** Department of Physics & Astronomy, University of Utah  
 **Experiment:** IceCube Neutrino Observatory (IceCube Upgrade)  
-**Version:** v1.4
+**Version:** v1.0
 
 ---
 
 ## 📖 Project Overview
 
-This repository hosts the automated data pipeline designed to monitor and visualize the **IceCube Upgrade Camera System**. As new calibration data is acquired from the camera modules buried deep in the Antarctic ice, this system automatically processes the raw binary data into visualizable timelapse GIFs.
+This repository hosts the automated data pipeline designed to monitor and visualize the **IceCube Upgrade Camera System**. As new calibration data is acquired from the camera modules from South Pole, this system automatically processes the raw binary data into visualizable timelapse GIFs.
 
 The pipeline runs daily on the cluster, scans for fresh data arrivals, decodes the proprietary sensor formats, applies image enhancement algorithms suitable for low-light environments, and notifies the operator via email with a status report.
 
@@ -19,17 +19,14 @@ The pipeline runs daily on the cluster, scans for fresh data arrivals, decodes t
 3.  **Monitoring:** Provide daily verification that cameras are functioning and data is being written correctly.
 
 ---
-
-## 🚀 Features & Technical Capabilities
-
-### 1. Smart Incremental Processing
-The script employs a "lazy update" strategy to maximize efficiency on the cluster:
-* It checks existing GIFs against the current raw data.
+### Features:
+### Incremental Processing
+* This script checks existing GIFs against the current raw data.
 * **If a GIF exists:** It counts the frames. If the raw data has *more* files than the GIF has frames, it appends only the new images.
 * **If no GIF exists:** It creates one from scratch.
 * **If up-to-date:** It skips the file entirely, saving hours of CPU time.
 
-### 2. Advanced Image Processing Pipeline
+###  Advanced Image Processing Pipeline
 Raw data from the IceCube cameras is not immediately viewable. The script performs the following transformation chain using `OpenCV` and `NumPy`:
 
 1.  **Decompression:** Extracts `.raw` files from daily `.tar.gz` archives.
@@ -39,7 +36,7 @@ Raw data from the IceCube cameras is not immediately viewable. The script perfor
     * *Why?* The ice is extremely dark, but calibration LEDs are bright. A linear scale would make the ice invisible. ASINH allows us to see faint details in the dark background without saturating the bright light sources.
 5.  **CLAHE (Contrast Limited Adaptive Histogram Equalization):** Further enhances local contrast to bring out features in the drill hole ice.
 
-### 3. Geometry & Metadata Overlay
+### Geometry & Metadata Overlay
 Every frame is stamped with critical metadata for analysis:
 * **Timestamp:** Date and time of capture.
 * **Geometry:** String Number and DOM/Port Number.
