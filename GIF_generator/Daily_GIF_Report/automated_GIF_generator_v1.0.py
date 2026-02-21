@@ -286,6 +286,11 @@ def process_gif_task(prefix, file_list, output_root, depth_map):
             if result is None: continue
             _, raw_data = result
             
+            R = raw_data[0::2, 0::2]
+            G1 = raw_data[0::2, 1::2]
+            G2 = raw_data[1::2, 0::2]
+            B = raw_data[1::2, 1::2]
+            
             bayer = asinh_stretch(raw_data, p_black=0.5, a=40.0)
             bgr = cv2.cvtColor(bayer, cv2.COLOR_BAYER_BG2BGR)
             final_bgr = clahe(bgr, clipLimit=3.0)
