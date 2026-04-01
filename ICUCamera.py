@@ -107,7 +107,8 @@ def header_info(filename):
         ) = unpack_from("<HBBLHBB8BBBHHHHBHBBHBB", hdr)
         nbytes = nbhi << 16 | nblo
         icm_ts = icm_hi << 32 | icm_lo
-        cam_id_str = "".join(["%x" % c for c in cam_id])
+        #cam_id_str = "".join(["%x" % c for c in cam_id])
+        cam_id_str = "".join(f"{c:02x}" for c in cam_id)
         return(f"""Image length: {nbytes} B
                 Record type: 0x{rectype:02X}
                 ICM timestamp: {icm_ts}
