@@ -46,6 +46,54 @@ Raw sensor data requires demosaicing (Bayer → RGB), pedestal subtraction (remo
 
 ---
 
+### Where Noise Reduction Happens
+
+1. **Configuration:** Set `PEDESTAL = 235.0` (measure from dark image)
+2. **Pedestal-Sub Channel:** Automatically generates `Blue - 235` visualization
+3. **PDF Report:** Shows corrected grayscale using pedestal subtraction
+4. **All Visualizations:** Use pedestal-subtracted data for colorbars
+
+### Result
+
+**Key Advantage:** Can now distinguish between:
+- Just noise (pedestal)
+- Real light signal
+- Sensor defects
+
+---
+
+## How to Set File Names
+
+### Step 1: Find Your Raw Image File
+
+**Location:** Wherever your camera data is stored
+
+Example paths: Windows: C:\Users\yourname\Downloads\Camera-Run_...raw Linux: /home/yourname/data/Camera-Run_...raw Mac: /Users/yourname/Downloads/Camera-Run_...raw
+**Filename format (don't change it):**
+Camera-Run_IIB_string92_mDOM_port5106_cam1_illum1_gain0_exposure3700ms_20260327-16-15-56_trial0_new.raw ↑ Script automatically extracts metadata
+
+### Step 2: Open Script Configuration
+
+Open `ICUcamera_Noise_Reduced_Report.py` in text editor
+
+**IN_python**
+# Line 31: INPUT_FILENAME
+# Copy EXACTLY as it appears on disk (including .raw extension)
+
+INPUT_FILENAME = r"Camera-Run_IIB_string92_mDOM_port5106_cam1_illum1_gain0_exposure3700ms_20260327-16-15-56_trial0_new.raw"
+# Line 34: INPUT_DIRECTORY
+# Full path to folder containing the .raw file
+
+# Windows example:
+INPUT_DIRECTORY = r"C:\Users\yourname\Downloads"
+
+# Linux example:
+INPUT_DIRECTORY = r"/home/yourname/data"
+
+# Mac example:
+INPUT_DIRECTORY = r"/Users/yourname/Downloads" 
+
+
 ## Installation
 
 ### Prerequisites
