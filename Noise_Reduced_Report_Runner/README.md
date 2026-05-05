@@ -94,6 +94,26 @@ INPUT_DIRECTORY = r"C:\Users\yourname\Downloads"
 ### Windows example:
 OUTPUT_DIRECTORY = r"C:\Users\yourname\analysis_results"
 
+**Summary**
+Key Concepts
+Noise Reduction:
+
+Method: Pedestal subtraction (Raw ADU - 235 = True Signal)
+Benefit: Distinguishes real signal from baseline noise
+Parameter: PEDESTAL = 235.0 (adjust to your camera)
+File Configuration:
+
+INPUT_FILENAME: Exact filename of .raw file
+INPUT_DIRECTORY: Full path to folder containing file
+OUTPUT_DIRECTORY: Where results will be saved
+Remember: Use r"..." format for Windows paths!
+**Output:**
+
+32 PNG images (4 stretches × 8 channels)
+1 summary panel (2×4 grid)
+1 page PDF report
+All with noise-reduced data
+
 ## Installation
 
 ### Prerequisites
