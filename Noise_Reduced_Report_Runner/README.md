@@ -77,22 +77,22 @@ Camera-Run_IIB_string92_mDOM_port5106_cam1_illum1_gain0_exposure3700ms_20260327-
 Open `ICUcamera_Noise_Reduced_Report.py` in text editor
 
 **IN_python**
-# Line 31: INPUT_FILENAME
-# Copy EXACTLY as it appears on disk (including .raw extension)
+
+### Line 31: INPUT_FILENAME
+### Copy EXACTLY as it appears on disk (including .raw extension)
 
 INPUT_FILENAME = r"Camera-Run_IIB_string92_mDOM_port5106_cam1_illum1_gain0_exposure3700ms_20260327-16-15-56_trial0_new.raw"
-# Line 34: INPUT_DIRECTORY
-# Full path to folder containing the .raw file
+### Line 34: INPUT_DIRECTORY
+### Full path to folder containing the .raw file
 
-# Windows example:
+### Windows example:
 INPUT_DIRECTORY = r"C:\Users\yourname\Downloads"
 
-# Linux example:
-INPUT_DIRECTORY = r"/home/yourname/data"
+### Line 37: OUTPUT_DIRECTORY
+### Results folder (created automatically if doesn't exist)
 
-# Mac example:
-INPUT_DIRECTORY = r"/Users/yourname/Downloads" 
-
+### Windows example:
+OUTPUT_DIRECTORY = r"C:\Users\yourname\analysis_results"
 
 ## Installation
 
