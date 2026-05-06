@@ -654,12 +654,14 @@ class ImageAnalyzer:
         ax3_l.set_title('Corrected Grayscale\n(Log Normalized)', pad=10, fontsize=10)
         
         # RGB visualization with proper cv2 processing
-        bgr = icuc.Npy2Bgr(self.npy)
-        bgr = icuc.BgrCorrection(bgr)
-        rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0
-        ax3_r.imshow(np.clip(rgb, 0, 1))
-        ax3_r.set_title('Color RGB Image\n(Demosaiced & Corrected)', pad=10, fontsize=10)
-        ax3_r.axis('off')
+        bgr16 = icuc.Npy2Bgr16(self.npy, bayer_code=cv2.COLOR_BAYER_BG2BGR)
+        bgr01_asinh = icuc.stretch_preserve_color(bgr16, p_black=0.1, p_white=99, a=40.0)
+        out8_asinh = icuc.to_uint8(bgr01_asinh)
+        out8_asinh_clahe = icuc.clahe_on_l_channel(out8_asinh, clipLimit=3.0)
+        rgb = cv2.cvtColor(out8_asinh_clahe, cv2.COLOR_BGR2RGB)
+        
+        ax3_r.imshow(rgb)
+        ax3_r.set_title('RGB Image using ASINH and CLAHE)', pad=10)
         
         self._add_section_title(fig, ax3_l, "[3] Standard Visualizations", dy=0.018)
         
